@@ -1,2 +1,8 @@
 
+<h1>All lists</h1>
 <%= link_to "make a new list", new_list_path %>
+ <ul>
+  <% @lists.each do |list| %>
+    <li><%= link_to "See details of: #{list.name}", list_path(list) %> <%= button_to "delete it", list_path(list), method: :delete %></li>
+  <% end %>
+ </ul>
